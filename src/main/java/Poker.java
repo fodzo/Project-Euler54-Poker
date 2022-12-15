@@ -13,7 +13,7 @@ public class Poker {
 		URL url = new URL("https://projecteuler.net/project/resources/p054_poker.txt");
 		InputStream is = url.openStream();
 		BufferedReader reader = new BufferedReader(new InputStreamReader(is));
-	    int count=(int)reader.lines().filter(s->Hand.playerOneWins(s)==true).count();
+	        int count=(int)reader.lines().filter(s->Hand.playerOneWins(s)).count();
 		System.out.println("Player 1 wins "+count+" hands");	
 	 }
 }
