@@ -16,5 +16,6 @@
     After implementing all the classes, enumerations, methods needed to compare two Hand objects, 
     I read the data from the link (https://projecteuler.net/project/resources/p054_poker.txt), 
     calculated and displayed the number of hands won by Player 1.
+    I used JUnit5 for Unit Testing.
 
 
