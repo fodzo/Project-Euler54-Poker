@@ -79,7 +79,7 @@ public boolean isRoyalFlush()
 {
 	return this.cards.get(0).getValue().equals(CardValue.ten) && this.isFlush() && this.isStraight();
 }
-
+// returns the card whose value has x occurrences(x of a kind)
 public Card getCardByOccurence(int x)
 {
 	int size=this.cards.size();
@@ -101,7 +101,7 @@ public Hand(List<Card> cards) {
 	super();
 	this.cards = cards;
 }
-
+// return the different pairs
 public Map<Integer,List<Card>> pairs()
 {
 	List<Card> cards=new ArrayList<Card>();
@@ -129,6 +129,7 @@ public Map<Integer,List<Card>> pairs()
 	pairs.sort(null);
 	return getMap(count,pairs);
 }
+//check if there is x different pairs
 public boolean isXPairs(int x)
 {
 	Map<Integer,List<Card>> map=this.pairs();
@@ -245,7 +246,7 @@ public int compareTo(Hand o) {
 		return card1.compareTo(card2);
 			
 	}
-	return compareHigherCards(this, o);
+	return compareHighestCards(this, o);
 }
 public static Map<Integer,List<Card>> getMap(int count,List<Card> cards)
 {
@@ -253,7 +254,8 @@ public static Map<Integer,List<Card>> getMap(int count,List<Card> cards)
 	map.put(count,cards);
 	return map;
 }
-public static int compareHigherCards(Hand hand1, Hand hand2)
+//compares the highest cards of two different hands whose rank is equal to HighCard
+public static int compareHighestCards(Hand hand1, Hand hand2)
 {
 	ArrayList<Card> liste1 = new ArrayList<Card>();
 	ArrayList<Card> liste2=new ArrayList<Card>();
@@ -280,7 +282,7 @@ public static int compareHigherCards(Hand hand1, Hand hand2)
 	}
     return 0;
 }
-
+// returns true if Player 1 wins
 public static boolean playerOneWins(String hands)
 {
 	int position=14;
