@@ -113,10 +113,10 @@ public class HandTest {
 		assertTrue(new Hand("TH AH KH QH JH").compareTo(new Hand("4S 4C 4H TH 3D"))>0);	
 	}
 	@Test
-	void testCompareHigherCards() 
+	void testCompareHighestCards() 
 	{
-	  assertTrue(Hand.compareHigherCards(new Hand("5D 8C 9S JS AC"),new Hand("2C 5C 7D 8S QH"))>0);
-	  assertFalse(Hand.compareHigherCards(new Hand("5H 5C 6S 7S KD"),new Hand("2C 3S 8S 8D TD"))>0);	
+	  assertTrue(Hand.compareHighestCards(new Hand("5D 8C 9S JS AC"),new Hand("2C 5C 7D 8S QH"))>0);
+	  assertFalse(Hand.compareHighestCards(new Hand("5H 5C 6S 7S KD"),new Hand("2C 3S 8S 8D TD"))>0);	
 	}
 	
 	@Test
