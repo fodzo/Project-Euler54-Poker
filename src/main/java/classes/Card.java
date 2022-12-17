@@ -1,7 +1,7 @@
-package main.java.classes;
+package classes;
 
-import main.java.enums.CardValue;
-import main.java.enums.Suit;
+import enums.CardValue;
+import enums.Suit;
 
 public class Card implements Comparable<Card>{
 private CardValue value;
@@ -11,21 +11,15 @@ public int compareTo(Card o) {
 	// TODO Auto-generated method stub
 	return this.value.ordinal()-o.value.ordinal();
 }
-/**
- * @return the value
- */
+
 public CardValue getValue() {
 	return value;
 }
-/**
- * @param value the value to set
- */
+
 public void setValue(CardValue value) {
 	this.value = value;
 }
-/**
- * @return the suit
- */
+
 public Suit getSuit() {
 	return suit;
 }
@@ -44,9 +38,7 @@ public boolean equals(Object obj) {
 	return value.equals(other.getValue());
 	
 }
-/**
- * @param suit the suit to set
- */
+
 public void setSuit(Suit suit) {
 	this.suit = suit;
 }

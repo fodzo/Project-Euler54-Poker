@@ -1,14 +1,14 @@
-package main.java.classes;
+package classes;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import main.java.enums.CardValue;
-import main.java.enums.Rank;
-import main.java.enums.Suit;
 
+import enums.CardValue;
+import enums.Rank;
+import enums.Suit;
 
 public class Hand implements Comparable<Hand>{
 private List<Card> cards;
@@ -29,21 +29,17 @@ public Hand(String cards) {
 	
 }
 
-/**
- * @return the cards
- */
+
 public List<Card> getCards() {
 	return cards;
 }
 
-/**
- * @param cards the cards to set
- */
+
 public void setCards(List<Card> cards) {
 	this.cards = cards;
 }
 
-public boolean isFlush()
+private boolean isFlush()
 {
 	Suit suit=cards.get(0).getSuit();
 	int i=0;
@@ -56,7 +52,7 @@ public boolean isFlush()
 	}
 	return flush;
 }
-public boolean isStraight()
+private boolean isStraight()
 {
 	List<Card> cards=new ArrayList<Card>(this.cards.size());
 	cards.addAll(this.cards);
@@ -71,11 +67,11 @@ public boolean isStraight()
 	}
 	return straight;
 }
-public boolean isStraightFlush()
+private boolean isStraightFlush()
 {
 	return this.isFlush() && this.isStraight();
 }
-public boolean isRoyalFlush()
+private boolean isRoyalFlush()
 {
 	return this.cards.get(0).getValue().equals(CardValue.ten) && this.isFlush() && this.isStraight();
 }
@@ -130,35 +126,35 @@ public Map<Integer,List<Card>> pairs()
 	return getMap(count,pairs);
 }
 //check if there is x different pairs
-public boolean isXPairs(int x)
+private boolean isXPairs(int x)
 {
 	Map<Integer,List<Card>> map=this.pairs();
 	if(map==null)
 		return false;
 	return map.get(x)!=null;
 }
-public boolean isOnePair()
+private boolean isOnePair()
 {
 	return this.isXPairs(1);
 }
-public boolean isTwoPairs()
+private boolean isTwoPairs()
 {
 	return this.isXPairs(2);
 }
-public boolean isThreeOfAKind()
+private boolean isThreeOfAKind()
 {
 	return this.getCardByOccurence(3)!=null;
 }
-public boolean isFourOfAKind()
+private boolean isFourOfAKind()
 {
 	return this.getCardByOccurence(4)!=null;
 }
-public boolean isFullHouse()
+private boolean isFullHouse()
 {
 	return this.isThreeOfAKind() && this.isOnePair();
 }
-//switch
-public Rank rank()
+
+private Rank rank()
 {
 	if(this.isRoyalFlush())
 		return Rank.RoyalFlush;
@@ -248,14 +244,14 @@ public int compareTo(Hand o) {
 	}
 	return compareHighestCards(this, o);
 }
-public static Map<Integer,List<Card>> getMap(int count,List<Card> cards)
+private static Map<Integer,List<Card>> getMap(int count,List<Card> cards)
 {
 	Map<Integer,List<Card>> map=new HashMap<Integer,List<Card>>(1);
 	map.put(count,cards);
 	return map;
 }
 //compares the highest cards of two different hands whose rank is equal to HighCard
-public static int compareHighestCards(Hand hand1, Hand hand2)
+private static int compareHighestCards(Hand hand1, Hand hand2)
 {
 	ArrayList<Card> liste1 = new ArrayList<Card>();
 	ArrayList<Card> liste2=new ArrayList<Card>();
@@ -281,13 +277,5 @@ public static int compareHighestCards(Hand hand1, Hand hand2)
 		
 	}
     return 0;
-}
-// returns true if Player 1 wins
-public static boolean playerOneWins(String hands)
-{
-	int position=14;
-	String hand1=hands.substring(0,position);
-	String hand2=hands.substring(position+1);
-	return new Hand(hand1).compareTo(new Hand(hand2))>0;
 }
 }

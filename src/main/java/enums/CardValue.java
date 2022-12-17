@@ -1,4 +1,4 @@
-package main.java.enums;
+package enums;
 
 import java.util.Arrays;
 public enum CardValue{
@@ -15,16 +15,11 @@ public enum CardValue{
 	Queen("Q"), 
 	King("K"), 
 	Ace("A");
-	/**
-	 * @return the value
-	 */
+	
 	public String getValue() {
 		return value;
 	}
 
-	/**
-	 * @param value the value to set
-	 */
 	public void setValue(String value) {
 		this.value = value;
 	}
