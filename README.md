@@ -9,8 +9,8 @@
    Solution
     The proposed solution is based on object-oriented programming.
     I needed to create the Hand and Card classes.
-    A Hand is composed of 5 cards. A card has a color and a value.
-    To represent the color and the value of a card I needed to create enumerations.
+    A Hand is composed of 5 cards. A card has a suit and a value.
+    To represent the suit and the value of a card I needed to create enumerations.
     I also need to be able to compare cards and compare Hands. To do this I had to implement the Comparable interface.
     To represent the rank of a Hand I created an enumeration named Rank.
     After implementing all the classes, enumerations, methods needed to compare two Hand objects, 
