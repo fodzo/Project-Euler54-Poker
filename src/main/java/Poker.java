@@ -14,7 +14,7 @@ public class Poker {
 		URL url = new URL("https://projecteuler.net/project/resources/p054_poker.txt");
 		InputStream is = url.openStream();
 		BufferedReader reader = new BufferedReader(new InputStreamReader(is));
-	    int count=(int)reader.lines().filter(s->playerOneWins(s)).count();
+	        int count=(int)reader.lines().filter(s->playerOneWins(s)).count();
 		System.out.println("Player 1 wins "+count+" hands");	
 	 }
 	
