@@ -1,12 +1,12 @@
-# Project-Euler54-Poker
+### Project-Euler54-Poker
 
 
 
-   Description
+  ## Description
     The goal of this project is to read the pocker.txt file and calculate the number of hands won by player 1.
     The full description of the project : projecteuler.net/problem=54
    
-   Solution
+  ## Solution
     The proposed solution is based on object-oriented programming.
     I needed to create the Hand and Card classes.
     A Hand is composed of 5 cards. A card has a suit and a value.
